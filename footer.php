@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 <footer class="footer pt-5 pb-4">
     <div class="container">
-		<h2 class="h3 mb-4">SIMCo Infrastructure Private Credit OFC</h2>
+		<h2 class="h3 mb-4">思卓基礎設施私募資本開放式基金型公司</h2>
         <div class="row pb-4 g-4">
 			<div class="col-sm-4">
 				<div class="mb-2">
@@ -38,10 +38,10 @@ defined( 'ABSPATH' ) || exit;
 				</nav>
             </div>
             <div class="col-sm-5">
-				<div>Advised by SIMCo:</div>
+				<div>顧問：</div>
 				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/SIMCo-logo-tx.png' ); ?>" alt="SIMCo Logo" width="279" height="58" class="my-2" />
 				<div class="mt-3">
-					&copy; <?= esc_html( gmdate( 'Y' ) ); ?> Sequoia Investment Management Company Limited
+					&copy; <?= esc_html( gmdate( 'Y' ) ); ?> 思卓基礎設施私募資本開放式基金型公司
 				</div>
 			</div>
 		</div>
