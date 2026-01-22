@@ -23,7 +23,7 @@ $policy_file = get_field( 'policy_file' );
                 <p><?= wp_kses_post( get_field( 'cta_intro' ) ); ?></p>
 				<div>
 					<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/pdf-icon--wo.svg' ); ?>" width="50" height="64" alt="PDF Icon" class="me-2 mb-1" />
-					<a href="<?= esc_url( $policy_file['url'] ); ?>" target="_blank" class="btn btn-dark btn-arrow">Download now</a>
+					<a href="<?= esc_url( $policy_file['url'] ); ?>" target="_blank" class="btn btn-dark btn-arrow">立即下載</a>
 				</div>
 			</div>
 		</div>
