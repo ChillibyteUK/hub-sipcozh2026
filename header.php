@@ -133,7 +133,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
 	<nav class="navbar navbar-expand-lg" aria-label="Main navigation">
 		<div class="container gap-4">
             <div class="d-flex justify-content-between w-100 w-lg-auto align-items-center py-0 py-lg-0">
-                <div class="logo-container"><a href="/" class="logo navbar-brand" aria-label="SIMCo Homepage"></a></div>
+                <div class="logo-container"><a href="/zh/" class="logo navbar-brand" aria-label="SIMCo Homepage"></a></div>
 				    <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'hub-sipcozh2026' ); ?></a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
