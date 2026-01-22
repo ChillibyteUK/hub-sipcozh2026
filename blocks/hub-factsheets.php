@@ -162,10 +162,10 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<?php
 			} else {
-				echo '<p>Coming Soon.</p>';
+				echo '<p class="h3 has-sipco-coral-100-color">首份每月資料摘要將於 2026 年初發布</p>';
 			}
 		} else {
-			echo '<p>Coming Soon.</p>';
+			echo '<p class="h3 has-sipco-coral-100-color">首份每月資料摘要將於 2026 年初發布</p>';
 		}
 		?>
 	</div>

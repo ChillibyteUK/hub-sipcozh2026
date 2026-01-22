@@ -217,10 +217,10 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<?php
 			} else {
-				echo '<p>Coming Soon.</p>';
+				echo '<p class="h3 has-sipco-coral-100-color">業績將於 2026 年底公布</p>';
 			}
 		} else {
-			echo '<p>Coming Soon.</p>';
+			echo '<p class="h3 has-sipco-coral-100-color">業績將於 2026 年底公布</p>';
 		}
 		?>
 	</div>
