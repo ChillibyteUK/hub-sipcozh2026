@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 				?>
 				</a>
 				<div class="mt-4">
-					<div class="mb-2"><strong>SIPCo Infrastructure Private Credit OFC</strong></div>
+					<div class="mb-2"><strong>思卓基礎設施私募資本開放式基金型公司</strong></div>
 					<?= do_shortcode( '[contact_address]' ); ?>
 					<div class="mt-2"><?= esc_html( get_field( 'contact_phone', 'option' ) ); ?></div>
 				</div>
