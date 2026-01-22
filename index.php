@@ -71,9 +71,8 @@ get_header();
 				?>
 				<div class="row">
 					<div class="col-12">
-						<div class="coming-soon-banner text-center py-5">
-							<h2>即將推出</h2>
-							<p>新內容即將推出，敬請期待。</p>
+						<div class="coming-soon-banner py-5">
+							<h2 class="has-sipco-coral-100-color">即將推出.</h2>
 						</div>
 					</div>
 				</div>
