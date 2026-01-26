@@ -62,8 +62,9 @@ get_header();
 				'post_status'    => array( 'publish' ),
 				'posts_per_page' => 1, // Just check if at least one post exists.
 			);
+
 			$check_query = new WP_Query( $args );
-			$has_posts = $check_query->have_posts();
+			$has_posts   = $check_query->have_posts();
 			wp_reset_postdata();
 
 			if ( ! $has_posts ) {
@@ -72,7 +73,7 @@ get_header();
 				<div class="row">
 					<div class="col-12">
 						<div class="coming-soon-banner py-5">
-							<h2 class="has-sipco-coral-100-color">即將推出.</h2>
+							<h2 class="has-sipco-coral-100-color">即將推出</h2>
 						</div>
 					</div>
 				</div>
@@ -134,7 +135,7 @@ get_header();
 						</form>
 					</div>
 				</div>
-				<?php
+					<?php
 				}
 				?>
 				<div class="row g-5">
@@ -148,73 +149,73 @@ get_header();
 					'posts_per_page' => -1,    // Get all posts.
 				);
 
-            $q = new WP_Query( $args );
+           		$q = new WP_Query( $args );
 
-            if ( $q->have_posts() ) {
-				while ( $q->have_posts() ) {
-					$q->the_post();
-					// get categories.
-					$categories = get_the_category();
-					if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
-						// get space separated list of category slugs.
-						$first_category = $categories[0];
-						// If there are multiple categories, use the first one.
-						if ( count( $categories ) > 1 ) {
-							// Get the first category slug.
-							$categories = array_slice( $categories, 0, 1 );
+				if ( $q->have_posts() ) {
+					while ( $q->have_posts() ) {
+						$q->the_post();
+						// get categories.
+						$categories = get_the_category();
+						if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
+							// get space separated list of category slugs.
+							$first_category = $categories[0];
+							// If there are multiple categories, use the first one.
+							if ( count( $categories ) > 1 ) {
+								// Get the first category slug.
+								$categories = array_slice( $categories, 0, 1 );
+							}
+							// Convert to space separated list.
+							$categories = implode( ' ', wp_list_pluck( $categories, 'slug' ) );
+							// Map both research and research-text to research for filtering.
+							$categories = str_replace( array( 'research-text', 'research' ), 'research', $categories );
 						}
-						// Convert to space separated list.
-						$categories = implode( ' ', wp_list_pluck( $categories, 'slug' ) );
-						// Map both research and research-text to research for filtering.
-						$categories = str_replace( array( 'research-text', 'research' ), 'research', $categories );
-					}
 
-					$plink  = get_permalink();
-					$target = '_self';
-					if ( 'research' === $first_category->slug ) {
-						$plink  = wp_get_attachment_url( get_field( 'pdf', get_the_ID() ) );
-						$target = '_blank';
-					}
-					if ( 'video' === $first_category->slug || 'podcast' === $first_category->slug ) {
-						$video_link = get_field( 'video_link', get_the_ID() );
-						if ( $video_link && ! ( str_contains( $video_link, 'youtube.com' ) || str_contains( $video_link, 'vimeo.com' ) ) ) {
-							$plink  = $video_link;
+						$plink  = get_permalink();
+						$target = '_self';
+						if ( 'research' === $first_category->slug ) {
+							$plink  = wp_get_attachment_url( get_field( 'pdf', get_the_ID() ) );
 							$target = '_blank';
 						}
-					}
+						if ( 'video' === $first_category->slug || 'podcast' === $first_category->slug ) {
+							$video_link = get_field( 'video_link', get_the_ID() );
+							if ( $video_link && ! ( str_contains( $video_link, 'youtube.com' ) || str_contains( $video_link, 'vimeo.com' ) ) ) {
+								$plink  = $video_link;
+								$target = '_blank';
+							}
+						}
 
-                    // strip ' PDF' from research category name.
-                    $catname = $first_category->name;
-                    $catname = str_replace( ' PDF', '', $catname );
+						// strip ' PDF' from research category name.
+						$catname = $first_category->name;
+						$catname = str_replace( ' PDF', '', $catname );
 
-					$catslug = $first_category->slug;
-					// Map research-text to research for switch statement.
-					if ( 'research-text' === $catslug ) {
-						$catslug = 'research';
-					}
+						$catslug = $first_category->slug;
+						// Map research-text to research for switch statement.
+						if ( 'research-text' === $catslug ) {
+							$catslug = 'research';
+						}
 
-					switch ( $catslug ) {
-						case 'research':
-							$read_more = 'Read now';
-							break;
-						case 'video':
-							$read_more = 'Watch now';
-							break;
-						case 'podcast':
-							$read_more = 'Play now';
-							break;
-						case 'interview':
-							$read_more = 'Watch now';
-							break;
-						case 'news':
-							$read_more = 'Read now';
-							break;
-						default:
-							$read_more = 'Read now';
-							break;
-					}
+						switch ( $catslug ) {
+							case 'research':
+								$read_more = 'Read now';
+								break;
+							case 'video':
+								$read_more = 'Watch now';
+								break;
+							case 'podcast':
+								$read_more = 'Play now';
+								break;
+							case 'interview':
+								$read_more = 'Watch now';
+								break;
+							case 'news':
+								$read_more = 'Read now';
+								break;
+							default:
+								$read_more = 'Read now';
+								break;
+						}
 
-					?>
+						?>
 					<div class="col-md-6 col-lg-4" data-category="<?= esc_attr( $categories ); ?>" data-year="<?= esc_attr( get_the_date( 'Y' ) ); ?>">
 						<a href="<?= esc_url( $plink ); ?>" target="<?= esc_attr( $target ); ?>" class="latest-insights__item">
 							<div class="latest-insights__img-wrapper">
@@ -238,17 +239,17 @@ get_header();
 							<div class="read-more <?= esc_attr( $catslug ); ?>" aria-label="<?= esc_attr( $read_more . ' about ' . get_the_title() ); ?>"><?= esc_html( $read_more ); ?></div>
 						</a>
 					</div>
-					<?php
+						<?php
+					}
+				} else {
+					echo '<p>No posts found.</p>';
 				}
-			} else {
-				echo '<p>No posts found.</p>';
-			}
 
-			// Reset post data.
-			wp_reset_postdata();
-			?>
+				// Reset post data.
+				wp_reset_postdata();
+				?>
 			</div>
-			<?php
+				<?php
 			} // End has_posts check.
 			?>
         </div>
