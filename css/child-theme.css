@@ -12493,7 +12493,6 @@ a.image-16x9 img {
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   font-weight: var(--fw-body);
-  text-wrap: balance;
 }
 
 .four-col-image-cards__card {

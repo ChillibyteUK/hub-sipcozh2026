@@ -20,7 +20,7 @@ $key_facts_file  = get_field( 'key_facts_file' );
 			</div>
 			<div class="col-sm-8 col-lg-9">
 				<h2 class="h3">招股說明書下載</h2>
-				<p style="max-width:50ch" class="mb-4">請點擊以下連結以查閱 SIPCo 招股說明書，了解我們的詳情。</p>
+				<p style="max-width:50ch" class="mb-4">請點擊以下連結以查閱 SIPCo 招股說明書，<br>了解我們的詳情。</p>
 				<div>
 					<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/pdf-icon.svg' ); ?>" width="50" height="64" alt="PDF Icon" class="me-2 mb-1" />
 					<a href="<?= esc_url( $prospectus_file['url'] ); ?>" target="_blank" class="btn btn-dark btn-arrow">立即下載</a>
