@@ -12601,6 +12601,9 @@ a.image-16x9 img {
   z-index: 2;
   transition: transform var(--transition);
 }
+.hub-team__name-holder__name {
+  margin-inline-end: 1rem;
+}
 .hub-team__image-wrapper {
   aspect-ratio: 16/9;
   overflow: hidden;
