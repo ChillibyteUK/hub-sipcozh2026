@@ -93,9 +93,9 @@
       z-index: 2;
       transition: transform var(--transition);
     }
-    &__name {
-      margin-inline-end: 1rem;
-    }
+  }
+  &__name {
+    margin-inline-end: 1rem;
   }
 
   &__image-wrapper {
